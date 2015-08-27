@@ -1,0 +1,20 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.4
+    driver_config:
+      forward:
+      - 8080:80
+
+suites:
+  - name: default
+    run_list:
+      - recipe[apache::default]
+    attributes:
+      apache:
+        indexfile: "index1.html"

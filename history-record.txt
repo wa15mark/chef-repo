@@ -1,0 +1,500 @@
+  187  ls -l
+  188  ls
+  189  mkdir food
+  190  cd food
+  191  git init chef-repo
+  192  cd chef-repo
+  193  ls
+  194  mkdir  roles
+  195  cd roles
+  196  vi starter.rb
+  197  ls -l
+  198  git add .
+  199  git status
+  200  git commit -m "First file"
+  201  git config --global user.name "Mark Kenneally"
+  202  git config --global user.email mark.kenneally@barclays.com
+  203  git commit --amend --reset-author
+  204  git log
+  205  cd ../../..
+  206  chef generate repo
+  207  mkdir .chef
+  208  cd .chef
+  209  vi knife.rb
+  210  ls
+  211  mv knife.rb x35mark-validator.pem
+  212  vi knife.rb
+  213  ls
+  214  vi wa16mark.pem
+  215  ls
+  216  knife node list
+  217  knife client list
+  218  cd ..
+  219  ls
+  220  ls -l
+  221  knife --version
+  222  knife client list
+  223  chef generate repo
+  224  cd .chef
+  225  cat knife.rb
+  226  ls -al
+  227  knife client listknife help list
+  228  knife help list
+  229  knife client help
+  230  ls -al
+  231  ls -l
+  232  ls
+  233  cd ..
+  234  ls
+  235  chef generate repo chef-repo
+  236  cd chef-repo
+  237  knife client list
+  238  ssh root@uvo1juxrjxt7xnx2lbu.vm.cld.sr
+  239  knife bootstrap uvo1juxrjxt7xnx2lbu.vm.cld.sr -x root -P Yy2Uj4H9ew -N "Radbroke"
+  240  ls -l
+  241  ls -la
+  242  ssh root@uvo1juxrjxt7xnx2lbu.vm.cld.sr 
+  243  whoami
+  244  chef generate cookbook cookbooks/apache
+  245  ls -la cookbooks/apache
+  246  ls -al recipes
+  247  vi cookbooks/apache/recipes/default.rb
+  248  vi cookbooks/apache/recipes/default.rb
+  249  chef generate file cookbooks/apache index.html
+  250  vi cookbooks/apache/files/default/index.html
+  251  knife cookbook upload apache
+  252  ls
+  253  cd cookbooks
+  254  ls
+  255  knife cookbook upload apache
+  256  cd ..
+  257  ls
+  258  ls -l
+  259  cd cookbooks
+  260  ls
+  261  find .
+  262  cd ..
+  263  history
+  264  mv ../.chef .
+  265  knife cookbook upload apache
+  266  knife node run_list add Radbroke "recipe[apache::default]"
+  267  knife load list
+  268  knife client list
+  269  knife node list
+  270  knife node show Radbroke
+  271  knife node show Radbroke
+  272  knife node show Radbroke -Fj
+  273  knife node show Radbroke -a fqdn
+  274  knife search node "*:*" -a fqdn
+  275  knife search node "*:*" -a cpu
+  276  chef generate attribute cookbooks/apache default
+  277  vi cookbooks/apache/attributes/default.rb
+  278  chef generate file cookbooks/apache index1.html
+  279  vi cookbooks/apache/files/default/index1.html
+  280  vi cookbooks/apache/recipes/default.rb
+  281  knife cookbook upload apache
+  282  vi cookbooks/apache/recipes/default.rb
+  283  chef generate file cookbooks/apache index2.html
+  284  vi cookbooks/apache/files/default/index2.html
+  285  history
+  286  knife cookbook upload apache
+  287  knife node show node -l | more
+  288  knife node show Radbroke -l | grep index
+  289  knife node show Radbroke -l | more
+  290  cd cookbooks
+  291  ls
+  292  cd apache
+  293  ls
+  294  vi .kitchen.yml
+  295  kitchen init --driver=kitchen-docker
+  296  sudo apt-get update
+  297  sudo apt-get install lxc-docker
+  298  vi .kitchen.yml
+  299  kitchen list
+  300  kitchen create
+  301  kitchen login
+  302  kitchen list
+  303  kitchen destroy
+  304  kitchen converge
+  305  kitchen login
+  306  history
+  307  vi .kitchen.yml
+  308  vi .kitchen.yml
+  309  history
+  310  kitchen destroy
+  311  kitchen converge
+  312  curl localhost
+  313  curl localhost:8080
+  314  cat .kitchen.yml
+  315  ls
+  316  cd test
+  317  ls
+  318  cd ..
+  319  ls
+  320  ls -a
+  321  tree
+  322  sudo apt-get install tree
+  323  tree
+  324  kitchen -version
+  325  kitchen --version
+  326  cd test/integration/default
+  327  mkdir serverspec
+  328  vi severspec/default_spec.rb
+  329  ls
+  330  mv temp.txt serverspec/default_spec.rb
+  331  find .
+  332  curl http://localhost
+  333  cd ../../..
+  334  ls
+  335  find .
+  336  tree
+  337  cd files/default
+  338  ls
+  339  vi *
+  340  cd ../../..
+  341  ls
+  342  cd apache
+  343  ls
+  344  cd test
+  345  ls
+  346  cd int*/def*
+  347  ls
+  348  cd ser*
+  349  ls
+  350  vi spec_helper.rb
+  351  cd ../../..
+  352  ls
+  353  cd ..
+  354  ls
+  355  ls -l
+  356  kitchen verify
+  357  history
+  358  history | grep kitchen
+  359  kitchen destroy
+  360  kitchen converge
+  361  history
+  362  kitchen verify
+  363  cd ../..
+  364  chef generate cookbook cookbooks/motd
+  365  chef generate attribute cookbooks/motd default
+  366  vi cookbooks/motd/default.rb
+  367  cd cookbooks
+  368  ls
+  369  cd motd
+  370  ls
+  371  mv default.rb attributes
+  372  find .
+  373  cat attributes/default.rb
+  374  vi recipes/default.rb
+  375  cd history
+  376  history
+  377  ls ..
+  378  ls ../apache/recipes
+  379  cat default.rb
+  380  cat ../apache/recipes/default.rb
+  381  vi recipes/default.rb
+  382  cd ..
+  383  ls
+  384  cd apache
+  385  tree
+  386  cd ..
+  387  ls
+  388  cd motd
+  389  ls
+  390  history | grep template
+  391  cd ..
+  392  cd ..
+  393  ls
+  394  tree
+  395  ls
+  396  cd cookbooks
+  397  ls
+  398  cd motd
+  399  ls
+  400  tree
+  401  ls
+  402  history
+  403  vi recipes/default.rb
+  404  history
+  405  vi recipes/default.rb
+  406  ls
+  407  tree
+  408  find .
+  409  git status
+  410  git log
+  411  cd ../..
+  412  chef generate template cookbooks/motd motd
+  413  vi cookbooks/motd/templates/default/motd.erb
+  414  upload motd
+  415  history | grep load
+  416  knife cookbook upload motd
+  417  history | grep cookbook
+  418  chef generate cookbook cookbooks/pci
+  419  history
+  420  history | more
+  421  cd cookbooks
+  422  cd pcils
+  423  cd pci
+  424  ls
+  425  mkdir attributes
+  426  vi attributes/default.rb
+  427  history | grep mkdir
+  428  ls
+  429  cd ..
+  430  ls */attributes
+  431  history
+  432  history | grep attribute
+  433  cd attributes
+  434  ls
+  435  cd pci
+  436  cd attrib*
+  437  ls
+  438  mv def* safe.rb
+  439  cd ..
+  440  cd ../../..
+  441  chef generate attribute cookbooks/pci default
+  442  ls
+  443  cd chef-repo
+  444  history
+  445  chef generate attribute cookbooks/pci default
+  446  cd cookbooks/pci/attributes
+  447  ls
+  448  ls -l
+  449  rm default.rb
+  450  mv safe.rb default.rb
+  451  cd ../..
+  452  cd ..
+  453  history attribute
+  454  history | grep attribute
+  455  history | more
+  456  history
+  457  history | grep run_list
+  458  knife cookbook upload pci
+  459  knife node run_list add Radbroke "recipe[motd::default]"
+  460  knife node show Radbroke
+  461  history
+  462  history | more
+  463  knife node show Radbroke
+  464  ls
+  465  cd cookbooks
+  466  vi motd/metadata.rb
+  467  cd ..
+  468  knife cookbook upload motd
+  469  history | grep search
+  470  knife search node "pci:*" -a pci
+  471  vi cookbooks//pci/attributes/default.rb 
+  472  knife cookbook upload pci
+  473  history
+  474  knife node show Radbroke
+  475  vi cookbooks/apache/metadata.rb 
+  476  chef generate attribute cookbooks/apache default
+  477  vi cookbooks/apache/attributes/default.rb 
+  478  vi cookbooks/apache/recipes/default.rb 
+  479  vi cookbooks/apache/recipes/default.rb 
+  480  ls
+  481  history
+  482  git log cookbooks/apache/recipes/default.rb
+  483  vi cookbooks/apache/recipes/default.rb 
+  484  chef generate template cookbooks/apache custom
+  485  vi cookbooks/apache/templates/default/custom.erb 
+  486  vi cookbooks/apache/templates/default/index.html.erb
+  487  knife cookbook upload apache
+  488  history
+  489  vi cookbooks/apache/templates/default/custom.erb 
+  490  history
+  491  knife cookbook upload apache
+  492  vi cookbooks/apache/templates/default/custom.erb 
+  493  ls
+  494  cd cook*
+  495  ls
+  496  cd ap*
+  497  ls
+  498  find .
+  499  vi recipes/default.rb 
+  500  history
+  501  vi templates/default/index.html.erb 
+  502  history
+  503  vi templates/default/custom.erb 
+  504  cd ../..
+  505  history
+  506  knife cookbook upload apache
+  507  vi cookbooks/apache/templates/default/custom.erb 
+  508  history
+  509  knife cookbook upload apache
+  510  vi cookbooks/apache/templates/default/custom.erb 
+  511  knife cookbook upload apache
+  512  mkdir -p data_bags/users
+  513  knife data_bag create users
+  514  ls -ltra
+  515  vi data_bags/users/bobo.json
+  516  ls
+  517  knife data_bag from file users bobo.json
+  518  history
+  519  cd data_bags/users/
+  520  ls
+  521  cp bobo.json frank.json
+  522  vi frank.json
+  523  cd ../..
+  524  history
+  525  knife data_bag from gile users frank.json
+  526  history
+  527  knife data_bag from file users frank.json
+  528  knife data_bag show 
+  529  knife search users "*:*"
+  530  knife search users "id:bobo" -a shell
+  531  knife search users "comment:\"Bobo T. Cloun\""
+  532  mkdir data_bags/groups
+  533  knife data_bag create groups
+  534  vi data_bags/groups/clowns.json
+  535  knife data_bag from file groups clowns.json
+  536  history
+  537  vi data_bags/groups/clowns.json
+  538  history
+  539  knife data_bag from file groups clowns.json
+  540  knife search groups "*:*"
+  541  chef generate users 
+  542  chef generate cookbook cookbook/users
+  543  history | grep generate
+  544  chef generate cookbook cookbooks/users
+  545  vi cookbooks/users/user_default.rb
+  546  ls
+  547  history
+  548  cd cookbooks/users
+  549  ls
+  550  mv user_default.rb recipes/default.rb
+  551  cd ..
+  552  cd ..
+  553  chef generate recipe cookbooks/users groups
+  554  vi cookbooks/users/recipes/groups.rb
+  555  knife cookbook upload users
+  556  knife node run_list add Radbroke 'recipe[users]'
+  557  ls
+  558  cd roles
+  559  ls
+  560  vi webserver.rb
+  561  ls
+  562  cd ..
+  563  knife role from file webserver.rb
+  564  knife role show webserver
+  565  knife search role "run_list:recipe\[apache\]"
+  566  knife node run_list add Radbroke "role[webserver]"
+  567  knife node run_list remove Radbroke "recipe[apache::default]"
+  568  history
+  569  knife search node "role:webserver" -a apache.sites
+  570  vi roles/webserver.rb
+  571  history
+  572  knife role from file webserver.rb
+  573  knife node run_list add Radbroke "role[webserver]"
+  574  knife search node "role:webserver" -a apache.sites
+  575  vi roles/base.rb
+  576  knife role from file 
+  577  history
+  578  knife role from file base.rb
+  579  vi roles/base.rb
+  580  history | grep vi
+  581  vi roles/webserver.rb
+  582  history
+  583  knife role from file webserver.rb
+  584  knife node run_list remove Radbroke "recipe[apache::default]"
+  585  knife node run_list remove Radbroke "recipe[users]"
+  586  knife node run_list remove Radbroke "recipe[motd::default]"
+  587  knife cookbook show apache
+  588  knife environment list
+  589  mkdir environments
+  590  ls
+  591  vi environments/dev.rb
+  592  knife environment from file dev.rb
+  593  knife environment show
+  594  knife environment list
+  595  knife environment show dev
+  596  knife node environment_set Radbroke dev
+  597  vi environments/production.rb
+  598  history
+  599  knife environment from file production.rb
+  600  knife node environment_set Radbroke production
+  601  knife cookbook site search chef-client
+  602  knife cookbook site show chef-client
+  603  knife cookbook site download chef-client
+  604  tar -zxvf chef-c*.gz -C cookbooks/
+  605  ls
+  606  cd  cookbooks/
+  607  ls
+  608  ls -l
+  609  cd chef*
+  610  ls
+  611  cat README.md
+  612  vi README*
+  613  vi recipes/delete_validation.rb
+  614  vi recipes/service.rb
+  615  cd ..
+  616  ls
+  617  vi roles/base.rb
+  618  ls
+  619  ls
+  620  cd chef-client
+  621  ls
+  622  cd ..
+  623  find . | grep roles
+  624  cd ..
+  625  ls
+  626  cd roles
+  627  ls
+  628  vi base.rb
+  629  knife role from file base.rb
+  630  knife cookbook upload chef-client
+  631  cd ..
+  632  cd cookbooks
+  633  ls
+  634  cd chef-client/
+  635  ls
+  636  vi metadata.rb
+  637  history
+  638  vi metadata.rb
+  639  berks --help
+  640  berks init .
+  641  vi Berksfile
+  642  berks install
+  643  cat Berksfile.lock
+  644  cd ~/.berkshelf
+  645  ls
+  646  cd cook*
+  647  ls
+  648  cd ..
+  649  cd ..
+  650  ls
+  651  cd chef-repo
+  652  ls
+  653  cd cookbooks
+  654  ls
+  655  cd chef*
+  656  berks upload
+  657  cd ../..
+  658  chef generate cookbook cookbooks/my-chef-client
+  659  ls
+  660  vi cookbooks/mt-chef.client/recipes/default.rb
+  661  ls
+  662  cat cookbooks//my-chef-client/recipes/def*
+  663  cat temp.txt
+  664  history
+  665  rm cookbooks/my-chef-client/recipes/default.rb
+  666  cp temp.txt cookbooks/my-chef-client/recipes/default.rb
+  667  vi cookbooks/my-chef-client/metadata.rb
+  668  knife cookbook upload my-chef-client
+  669  history
+  670  ls
+  671  cd roles
+  672  ls
+  673  vi base.rb
+  674  cd ..
+  675  history
+  676  history | grep base
+  677  knife role from file base.rb
+  678  history
+  679  Nr8u1lyMHO
+  680  ls -al
+  681  cat .gitignore
+  682  cd ..
+  683  ls -al
+  684  cd chef-repo
+  685  ls -l
+  686  history > history-record.txt
